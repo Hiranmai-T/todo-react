@@ -1,38 +1,37 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css?family=Josefin+Slab:300,400,600,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,600,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500&display=swap');
+
+.list{
+  list-style-type: none;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.task-btn{
+  background-color: transparent;
+  border: none;
+  outline: none;
+  /* color: gray; */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.fa{
+  color: gray;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.task-input{
+  border: 1px solid #444;
+  outline: none;
+  border-radius: 20px;
+  /* box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3); */
 }
 
-.App-link {
-  color: #61dafb;
+.add-btn{
+  border-radius: 25px;
+  /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); */
+  outline: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.clear-btn{
+  border-radius: 25px;
+  /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); */
+  outline: none;
 }
