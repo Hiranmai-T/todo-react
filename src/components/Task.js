@@ -1,47 +1,66 @@
-import React,{useContext,useState} from 'react';
+import React,{useContext,useState,useEffect} from 'react';
 import {TaskContext} from '../context/TaskContext';
-import { Card, CardBody, CardText } from 'reactstrap';
+import { Card, CardBody } from 'reactstrap';
 
 const Task = ({task}) => {
     const {removeTask, findItem,modifyStatus} = useContext(TaskContext);
     const [style, setStyle] = useState('none');
-    const [status, setStatus] = useState(false);
+    const [op,setOp] = useState(1);
+    const [status, setStatus] = useState(task.status);
+    const [color,setColor] = useState('white');
+
+    useEffect(()=>{
+        if(status){
+            setOp(0.3);
+            setStyle('line-through');
+            setColor('rgba(175, 47, 47, 0.45)');
+        }else{
+            setOp(1);
+            setStyle('none');
+            setColor('white');
+        }
+    },[status]);
+
     const handleChange = () => {
         modifyStatus(task.id);
         const temp = !status;
+        
         setStatus(temp);
-        if(temp){
-            // console.log("Test");
-            setStyle('line-through');
-        }else{
-            setStyle('none');
-        }
+        // if(temp){
+        //     // console.log("Test");
+        //     setOp(0.3);
+        //     setStyle('line-through');
+        // }else{
+        //     setOp(1);
+        //     setStyle('none');
+        // }
     };
+    
     return (
         <li>
-            {/*  justify-content-center */}
-            <div className="row justify-content-center">  
-
-            <div className="col-12 col-md-7 ml-1 mr-1">
+            {/*   */}
+            <div className="row  justify-content-center">  
+            {/*   */}
+            <div className="col-12 task-row">
                 <Card className="box-shadow-hover pointer">
                     <CardBody>
                         
                         <div className="row ">
                             
-                            <div className="col-12 col-md-8">
+                            <div className="col-12 col-md-10">
                                 
-                                    <input  name="status" type = "checkbox" onChange={handleChange} className="mr-3 checkbox-round"
+                                    <input  name="status" type = "checkbox" onChange={handleChange} style={{backgroundColor:color}}className="mr-3 my-auto checkbox-round"
                                     />
                                 
-                                    <span style={{textDecoration:style}} className="font task-title">{task.title}</span>
+                                    <span style={{textDecoration:style,opacity:op}} className="font task-title">{task.title}</span>
                                 
                             </div>
                         
                     
                     
-                            <div className="col-12 col-md-3 offset-1">
+                            <div className="col-12 col-md-2">
                                 <div className="row">
-                                <div className="col-12 col-md-1">
+                                <div className="col-2 col-md-1">
                                 {
                                     (!status)?(
                                         <button onClick = {() => findItem(task.id)} className="btn btn-edit">
@@ -51,7 +70,7 @@ const Task = ({task}) => {
                                 
                                 }
                                 </div>
-                                <div className="col-12 col-md-1">
+                                <div className="col-2 col-md-1">
                                     <button onClick = {() => removeTask(task.id)} className="btn btn-delete">
                                         <i className="fa fa-trash"></i>
                                     </button>

@@ -8,6 +8,7 @@ import './App.css';
 
 function App() {
   return (
+    <div className="app ">
     <TaskListContextProvider>
         <div className="container">      
           <div className="main">  
@@ -16,11 +17,8 @@ function App() {
             <TaskList />
             </div>  
         </div> 
-          
-       
-          
-      
     </TaskListContextProvider>
+    </div>
   );
 }
 

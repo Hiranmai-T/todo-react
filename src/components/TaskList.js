@@ -1,44 +1,81 @@
-import React,{useContext,useEffect,useState} from 'react';
-import {TaskContext} from '../context/TaskContext';
-import Task from './Task';
+import React, { useContext, useEffect, useState } from "react";
+import { TaskContext } from "../context/TaskContext";
+import Task from "./Task";
 
 const TaskList = () => {
-    const {tasks} = useContext(TaskContext);
-    const [count, setCount] = useState(null);
-    useEffect(()=>{
-        const countTemp = tasks.filter((task)=>task.status===false).length;
-        setCount(countTemp);
-    },[tasks]);
-    return(
-        <div>
-            <div className="paper">
-                {tasks.length ? (
-                    <ul className="list ">
-                        {tasks.map(
-                            (task) => {
-                                return(
-                                    <Task task = {task} key={task.id}/>
-                                )
-                            }
-                        )}
-                    </ul>
-                ) : (
+  const { tasks,clearComplete } = useContext(TaskContext);
+  const [count, setCount] = useState(null);
+  const [completeCount, setCompleteCount ] = useState(0);
+  const [viewTasks, setViewTasks] = useState([]);
+
+  useEffect(() => {
+    const countTemp = tasks.filter((task) => task.status === false).length;
+    const countTemp2 = tasks.filter((task) => task.status===true).length;
+    setViewTasks(tasks);
+    setCompleteCount(countTemp2);
+    setCount(countTemp);
+  }, [tasks]);
+  
+  
+
+  const displayAll = () => {
+     setViewTasks(tasks);
+  };
+
+  const displayActive = () => {
+     const newTasks = tasks.filter((task) => task.status===false);
+     setViewTasks(newTasks);
+  };
+
+  const displayCompleted = () => {
+     const newTasks = tasks.filter((task) => task.status===true);
+     setViewTasks(newTasks);
+  };
+
+  return (
+    <div>
+      {/*className="row justify-content-center" */}
+      <div className="row justify-content-center">
+        {" "}
+        {/*className="col-12 col-md-7 paper" */}
+        {/* {viewTasks.length===0 ? setViewTasks(tasks) : console.log("Non Empty")} */}
+        {tasks.length ? (
+          <>
+            <ul className="col-md-7 list paper">
+              {viewTasks.map((task) => {
+                return <Task task={task} key={task.id} />;
+              })}
+              <li className="row">
+                <div className="col-3">
+                  {count > 0 ? (
                     <div className="row justify-content-center">
-                    <p className="font">No tasks</p>
+                      <p className="font task-count">{count} task(s) left</p>
                     </div>
-                )}
-            </div>
-            {/* <div className="row justify-content-center">
-                <div className="paper">
-                   <p>Hi</p>
+                  ) : (
+                    <></>
+                  )}
                 </div>
-            </div> */}
-            <div className="row justify-content-center"> 
-                <p className="font">You have {count} active task(s) to complete</p>
-            </div>
-       </div>
-        
-    );
+                <div className="col-5 my-auto">
+                  <button className="btn banner-button" onClick = {()=> displayAll()}>All</button>
+                  <button className="btn banner-button" onClick={()=>displayActive()}>Active</button>
+                  <button className="btn banner-button" onClick={()=>displayCompleted()}>Completed</button>
+                </div>
+                <div className="col-4  my-auto">
+                    {completeCount > 0 ? (
+                        <button className="btn banner-button" onClick={()=>clearComplete()}>Clear Completed</button>
+                    ) : (<></>)}
+                </div>
+              </li>
+            </ul>
+          </>
+        ) : (
+          <div className="row justify-content-center">
+            <p className="font no-tasks">No tasks</p>
+          </div>
+        )}
+      </div>
+    </div>
+  );
 };
 
 export default TaskList;

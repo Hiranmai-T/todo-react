@@ -41,6 +41,11 @@ const TaskContextProvider = (props) => {
     const modifyStatus = (id) => {
         const newTasks = tasks.map((task) => (task.id===id)? {title:task.title,id,status:!task.status} : task);
         setTasks(newTasks);
+    };
+
+    const clearComplete = () => {
+        const newTasks = tasks.filter((task) => task.status===false);
+        setTasks(newTasks)
     }
 
     return(
@@ -52,7 +57,8 @@ const TaskContextProvider = (props) => {
             findItem, 
             editTask, 
             editItem,
-            modifyStatus
+            modifyStatus,
+            clearComplete
             }}>
 
             {props.children}
