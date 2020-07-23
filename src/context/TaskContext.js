@@ -4,8 +4,14 @@ import {v4 as uuidv4 } from 'uuid';
 export const TaskContext = createContext();
 
 const TaskContextProvider = (props) => {
-    const initialState = JSON.parse(localStorage.getItem('tasks')) || [];
-
+    console.log(localStorage.getItem('tasks'));
+    var initialState = [];
+    if(JSON.parse(localStorage.getItem('tasks')).length>0){
+        initialState = JSON.parse(localStorage.getItem('tasks'));
+    }else{
+        initialState = [{title:"Your first task!",id:uuidv4(),status:false}];
+    }
+    
     const [tasks,setTasks]  = useState(initialState);
 
     const [editItem, setEditItem ] = useState(null);

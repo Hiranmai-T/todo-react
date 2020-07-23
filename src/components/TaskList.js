@@ -41,14 +41,14 @@ const TaskList = () => {
         {/* {viewTasks.length===0 ? setViewTasks(tasks) : console.log("Non Empty")} */}
         {tasks.length ? (
           <>
-            <ul className="col-md-7 list paper">
+            <ul className="col-12 col-md-7 list paper">
               {viewTasks.map((task) => {
                 return <Task task={task} key={task.id} />;
               })}
-              <li className="row">
+              <li className="row  justify-content-center">
                 <div className="col-3">
                   {count > 0 ? (
-                    <div className="row justify-content-center">
+                    <div className="row  justify-content-center">
                       <p className="font task-count">{count} task(s) left</p>
                     </div>
                   ) : (

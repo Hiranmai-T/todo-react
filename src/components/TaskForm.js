@@ -41,13 +41,15 @@ const TaskForm = () => {
     
     return (
         <form onSubmit={handleSubmit} autoComplete="off">
-            <div className="row justify-content-center mb-3">
-                <input onChange = {handleChange} value={title} id="taskInput" className="col-12 col-md-7  ml-4 mb-1 task-input font" type="text" placeholder="What needs to be done?" required/>
-    
-                <button type="submit" id="addTask" className="btn btn-success add-btn font" >
-                   {/* {editItem? "Edit Task" : "Add Task"}  col-12 col-md-1 ml-2 mb-1 */}
-                </button>
-                {/* <button type="submit" onClick= {()=>clearTasks()} className="btn btn-danger col-12 col-md-1 mb-1 clear-btn font">Clear</button> */}
+            <div className="row justify-content-center">
+                <div className="col-12 col-md-7 ">
+                    <input onChange = {handleChange} value={title} id="taskInput" className="col-12 task-input font" type="text" placeholder="What needs to be done?" required/>
+        
+                    <button type="submit" id="addTask" className="btn btn-success add-btn font" >
+                    {/* {editItem? "Edit Task" : "Add Task"}  col-12 col-md-1 ml-2 mb-1 */}
+                    </button>
+                    {/* <button type="submit" onClick= {()=>clearTasks()} className="btn btn-danger col-12 col-md-1 mb-1 clear-btn font">Clear</button> */}
+                </div>
             </div>
         </form>
     )
