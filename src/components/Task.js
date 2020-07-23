@@ -47,7 +47,7 @@ const Task = ({task}) => {
                         
                         <div className="row ">
                             
-                            <div className="col-12 col-md-7">
+                            <div className="col-12 col-md-10">
                                 
                                     <input  name="status" type = "checkbox" onChange={handleChange} style={{backgroundColor:color}}className="mr-3 my-auto checkbox-round"
                                     />
