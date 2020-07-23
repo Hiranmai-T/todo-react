@@ -18,20 +18,104 @@
 }
 
 .task-input{
-  border: 1px solid #444;
+  border: 1px solid rgb(211, 209, 209);
   outline: none;
-  border-radius: 20px;
-  /* box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3); */
+  height: 50px;
+  border-radius: 10px;
+  box-shadow: 0 1px 2px rgba(138, 137, 137, 0.3);
 }
 
 .add-btn{
   border-radius: 25px;
   /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); */
+  font-weight: 900;
   outline: none;
+  visibility: hidden;
 }
 
 .clear-btn{
   border-radius: 25px;
   /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); */
+  font-weight: 900;
   outline: none;
 }
+
+
+
+.checkbox-round {
+  width: 1.7em;
+  height: 1.7em;
+  background-color: white;
+  border-radius: 50%;
+  vertical-align: middle;
+  border: 1px solid #ddd;
+  -webkit-appearance: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.checkbox-round:checked {
+  background-color: gray;
+}
+
+ .main{
+   position: relative;
+  top: 25px;
+} 
+
+.font{
+    font-style: normal;
+    font-variant-ligatures: normal;
+    font-variant-caps: normal;
+    font-variant-numeric: normal;
+    font-variant-east-asian: normal;
+    font-weight: 300;
+    font-stretch: normal;
+    font-size: 20px;
+    line-height: 1.4em;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  
+}
+
+.header{
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 100px;
+  font-weight: 100;
+  text-align: center;
+  color: rgba(175, 47, 47, 0.15);
+}
+
+.box-shadow-hover:hover {
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.paper {
+  background: #fff;
+  box-shadow:
+    /* The top layer shadow */
+    0 1px 1px rgba(0,0,0,0.15),
+    /* The second layer */
+    0 10px 0 -5px #eee,
+    /* The second layer shadow */
+    0 10px 1px -4px rgba(0,0,0,0.15),
+     /* The third layer */
+    0 20px 0 -10px #eee,
+    /* The third layer shadow */
+    0 20px 1px -9px rgba(0,0,0,0.15);
+    
+    
+}
+
+/* .text-title{
+  margin: inherit;
+  position: absolute;
+  padding-top: 15px;
+} */
+/* .main{
+  background-image: url("sky.jpg");
+  
+} */

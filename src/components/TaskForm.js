@@ -10,6 +10,7 @@ const TaskForm = () => {
             addTask(title);
             setTitle('');
         }else{
+            console.log(title);
             editTask(title,editItem.id);
             // setTitle('');
         }
@@ -23,21 +24,30 @@ const TaskForm = () => {
 
     useEffect(()=>{
         if(editItem!==null){
+            
             setTitle(editItem.title);
         }else{
             setTitle('');
         }
     }, [editItem]);
-
+    
+    // var input = document.getElementById("taskInput");
+    //     input.addEventListener(("keyup"),function(event){
+    //         if(event.keyCode===13){
+    //         event.preventDefault();
+    //         document.getElementById("addTask").click();
+    //     }
+    // });
+    
     return (
         <form onSubmit={handleSubmit}>
             <div className="row justify-content-center mb-3">
-                <input onChange = {handleChange} value={title} className="col-4 ml-3 task-input" type="text" placeholder="Add Task" required/>
+                <input onChange = {handleChange} value={title} id="taskInput" className="col-12 col-md-5 ml-4 mb-1 task-input font" type="text" placeholder="Add Task" required/>
     
-                <button type="submit" className="btn btn-success col-1 ml-1 add-btn">
-                   {editItem? "Edit Task" : "Add Task"}
+                <button type="submit" id="addTask" className="btn btn-success add-btn font" >
+                   {/* {editItem? "Edit Task" : "Add Task"}  col-12 col-md-1 ml-2 mb-1 */}
                 </button>
-                <button type="submit" onClick= {()=>clearTasks()} className="btn btn-danger col-1 ml-1 clear-btn">Clear</button>
+                <button type="submit" onClick= {()=>clearTasks()} className="btn btn-danger col-12 col-md-1 mb-1 clear-btn font">Clear</button>
             </div>
         </form>
     )

@@ -28,14 +28,20 @@ const TaskContextProvider = (props) => {
 
     const findItem = (id) => {
         const item = tasks.find((task) => task.id===id);
+        console.log("Hello");
         setEditItem(item);
     };
 
     const editTask = (title,id) => {
-        const newTasks = tasks.map((task) => (task.id===id)? {title,id} : task );
+        const newTasks = tasks.map((task) => (task.id===id)? {title,id,status:false} : task );
         setTasks(newTasks);
         setEditItem(null);
     };
+
+    const modifyStatus = (id) => {
+        const newTasks = tasks.map((task) => (task.id===id)? {title:task.title,id,status:!task.status} : task);
+        setTasks(newTasks);
+    }
 
     return(
         <TaskContext.Provider value={{
@@ -45,7 +51,8 @@ const TaskContextProvider = (props) => {
             clearTasks, 
             findItem, 
             editTask, 
-            editItem
+            editItem,
+            modifyStatus
             }}>
 
             {props.children}

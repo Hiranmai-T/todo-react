@@ -9,13 +9,17 @@ import './App.css';
 function App() {
   return (
     <TaskListContextProvider>
-      <div className="container ">
-        <Header />  
-        <TaskForm />
-        <TaskList />
+        <div className="container">      
+          <div className="main">  
+            <Header />  
+            <TaskForm />
+            <TaskList />
+            </div>  
+        </div> 
           
+       
           
-      </div>
+      
     </TaskListContextProvider>
   );
 }
