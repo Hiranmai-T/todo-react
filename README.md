@@ -1,5 +1,11 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+A TO-DO application done by a react noob
+Check out the live applications here(https://hiranmai-t.github.io/todo-react/)
+
+A snippet of the application
+
+
 ## Available Scripts
 
 In the project directory, you can run:
