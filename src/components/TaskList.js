@@ -41,7 +41,7 @@ const TaskList = () => {
         {/* {viewTasks.length===0 ? setViewTasks(tasks) : console.log("Non Empty")} */}
         {tasks.length ? (
           <>
-            
+            {/* <div className=""> */}
             <ul className="col-12 col-md-7 mx-auto list paper">
               {viewTasks.map((task) => {
                 return <Task task={task} key={task.id} />;
@@ -68,7 +68,7 @@ const TaskList = () => {
                 </div>
               </li>
             </ul>
-          
+            {/* </div> */}
           
           </>
           

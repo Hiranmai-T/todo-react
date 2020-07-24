@@ -39,10 +39,10 @@ const Task = ({task}) => {
     return (
         <li>
             {/*   */}
-            <div className="row  justify-content-center">  
+            <div className="row mx-auto justify-content-center">  
             {/*   */}
             <div className="col-12 task-row">
-                <Card className="box-shadow-hover pointer">
+                <Card className="box-shadow-hover justify-content-center pointer">
                     <CardBody>
                         
                         <div className="row ">
