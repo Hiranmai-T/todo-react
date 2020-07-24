@@ -206,6 +206,11 @@
   margin: 0 !important;
 }
 
+.row{
+  margin-left: -15 !important;
+  margin-right: -15 !important;
+}
+
 /* .text-title{
   margin: inherit;
   position: absolute;
