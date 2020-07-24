@@ -6,7 +6,7 @@ export const TaskContext = createContext();
 const TaskContextProvider = (props) => {
     console.log(localStorage.getItem('tasks'));
     var initialState = [];
-    if(JSON.parse(localStorage.getItem('tasks')).length>0){
+    if(JSON.parse(localStorage.getItem('tasks')) && JSON.parse(localStorage.getItem('tasks')).length>0){
         initialState = JSON.parse(localStorage.getItem('tasks'));
     }else{
         initialState = [{title:"Your first task!",id:uuidv4(),status:false}];
