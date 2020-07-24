@@ -41,11 +41,12 @@ const TaskList = () => {
         {/* {viewTasks.length===0 ? setViewTasks(tasks) : console.log("Non Empty")} */}
         {tasks.length ? (
           <>
-            <ul className="col-12 col-md-7 list paper">
+            
+            <ul className="col-12 col-md-7 mx-auto list paper">
               {viewTasks.map((task) => {
                 return <Task task={task} key={task.id} />;
               })}
-              <li className="row  justify-content-center">
+              <li className="row justify-content-center dev">
                 <div className="col-3">
                   {count > 0 ? (
                     <div className="row  justify-content-center">
@@ -67,7 +68,10 @@ const TaskList = () => {
                 </div>
               </li>
             </ul>
+          
+          
           </>
+          
         ) : (
           <div className="row justify-content-center">
             <p className="font no-tasks">No tasks</p>
@@ -75,6 +79,7 @@ const TaskList = () => {
         )}
       </div>
     </div>
+    
   );
 };
 
