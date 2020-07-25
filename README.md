@@ -1,10 +1,10 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 A TO-DO application done by a react noob
-Check out the live applications [here](https://hiranmai-t.github.io/todo-react/).
+Check out the live application [here](https://hiranmai-t.github.io/todo-react/).
 
 A snippet of the application
-![image] (https://github.com/Hiranmai-T/todo-react/blob/master/demo.png)
+![image](https://github.com/Hiranmai-T/todo-react/blob/master/demo.png)
 
 
 ## Available Scripts
